@@ -1,12 +1,12 @@
 <div>
-    <p>There are {{competitionsData.count}} competitions</p>
     <ul>
-        <li ng-repeat="competition in competitionsData.competitions">
-            <a href="#!/matches/{{competition.id}}">
-                {{competition.name}} in 
-                {{competition.area.name}} 
-                ({{competition.currentSeason.startDate}} to {{competition.currentSeason.endDate}})
-            </a>
+        <li ng-repeat="competition in competitionsData.competitions" 
+            ng-if="availableCompetitionIds.includes(competition.id)">
+                <a href="#!/matches/{{competition.id}}">
+                    {{competition.name}} in 
+                    {{competition.area.name}} 
+                    ({{competition.currentSeason.startDate}} to {{competition.currentSeason.endDate}})
+                </a>
         </li>
         
     </ul>

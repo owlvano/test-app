@@ -1,4 +1,9 @@
 <div>
     <h1></h1>
     <p>There are {{matchesData.count}} matches</p>
+    <ul>
+        <li ng-repeat="match in matchesData.matches">
+                {{match.homeTeam.name}} vs. {{match.awayTeam.name}}, winner: {{match.score.winner}} || UTC Date: {{match.utcDate}}
+        </li>
+    </ul>
 </div>
